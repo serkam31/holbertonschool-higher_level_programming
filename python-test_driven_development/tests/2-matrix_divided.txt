@@ -30,3 +30,22 @@ TypeError: div must be a number
 Traceback (most recent call last):
     ...
 ZeroDivisionError: division by zero
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+>>> # Test : Division par l'infini
+>>> matrix = [[10, 20], [30, 40]]
+>>> matrix_divided(matrix, float('inf'))
+[[0.0, 0.0], [0.0, 0.0]]
+
+>>> # Test : Argument manquant (div)
+>>> matrix_divided([[1, 2]])
+Traceback (most recent call last):
+    ...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+>>> # Test : Tous les arguments manquants
+>>> matrix_divided()
+Traceback (most recent call last):
+    ...
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
