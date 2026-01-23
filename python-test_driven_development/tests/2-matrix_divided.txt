@@ -1,0 +1,32 @@
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_divided(matrix, 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+>>> # Test : Lignes de tailles différentes
+>>> matrix = [[1, 2, 3], [4, 5]]
+>>> matrix_divided(matrix, 3)
+Traceback (most recent call last):
+    ...
+TypeError: Each row of the matrix must have the same size
+
+>>> # Test : Mauvais type dans la matrice (une chaîne de caractères)
+>>> matrix = [[1, 2, 3], ["salut", 5, 6]]
+>>> matrix_divided(matrix, 3)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> # Test : div n'est pas un nombre
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_divided(matrix, "non")
+Traceback (most recent call last):
+    ...
+TypeError: div must be a number
+
+>>> # Test : division par zéro
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+    ...
+ZeroDivisionError: division by zero
