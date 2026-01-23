@@ -7,7 +7,8 @@ def matrix_divided(matrix, div):
     msg = "matrix must be a matrix (list of lists) of integers/floats"
 
     # Vérification de la structure initiale
-    if not isinstance(matrix, list) or not matrix or not isinstance(matrix[0], list):
+    if (not isinstance(matrix, list) or not matrix or
+            not isinstance(matrix[0], list)):
         raise TypeError(msg)
 
     row_size = len(matrix[0])
