@@ -29,12 +29,11 @@ class Circle(Shape):
 
     def area(self):
         """Return the area of the circle."""
-        return ("Area: {}".format(self.radius**2 * pi))
+        return (self.radius**2 * pi)
 
     def perimeter(self):
         """Return the perimeter of the circle."""
-        return ("Perimeter: {}".format(2 * pi * self.radius))
-
+        return (2 * pi * self.radius)
 
 class Rectangle(Shape):
     """Rectangle class implementing the Shape abstract base class."""
@@ -46,15 +45,15 @@ class Rectangle(Shape):
 
     def area(self):
         """Return the area of the rectangle."""
-        return ("Area: {}".format(self.height * self.width))
+        return (self.height * self.width)
 
     def perimeter(self):
         """Return the perimeter of the rectangle."""
-        return ("Perimeter: {}".format(2 * (self.height + self.width))) 
+        return (2 * (self.height + self.width))
 
 
 def shape_info(shape):
     """Function that takes a shape object and prints its area and perimeter."""
 
-    print(shape.area())
-    print(shape.perimeter())
+    print('Area: {}'.format(shape.area()))
+    print('Perimeter: {}'.format(shape.perimeter()))
