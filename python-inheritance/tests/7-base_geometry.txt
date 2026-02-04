@@ -1,17 +1,26 @@
->>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+The ``7-base_geometry`` module
+==============================
 
-# Test area() method
+Using ``BaseGeometry``
+----------------------
+
+Importing the class:
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+# Test area() method - should raise Exception
 >>> bg = BaseGeometry()
 >>> bg.area()
 Traceback (most recent call last):
 ...
 Exception: area() is not implemented
 
-# Test integer_validator with valid positive integer
+# Test integer_validator with valid positive integers
 >>> bg = BaseGeometry()
 >>> bg.integer_validator("my_int", 12)
 
->>> bg.integer_validator("age", 89)
+>>> bg.integer_validator("width", 89)
+
+>>> bg.integer_validator("age", 1)
 
 # Test integer_validator with string
 >>> bg = BaseGeometry()
@@ -22,32 +31,34 @@ TypeError: name must be an integer
 
 # Test integer_validator with float
 >>> bg = BaseGeometry()
->>> bg.integer_validator("my_var", 10.5)
+>>> bg.integer_validator("age", 1.5)
 Traceback (most recent call last):
 ...
-TypeError: my_var must be an integer
+TypeError: age must be an integer
 
 # Test integer_validator with negative integer
 >>> bg = BaseGeometry()
->>> bg.integer_validator("my_var", -5)
+>>> bg.integer_validator("distance", -4)
 Traceback (most recent call last):
 ...
-ValueError: my_var must be greater than 0
+ValueError: distance must be greater than 0
 
 # Test integer_validator with zero
 >>> bg = BaseGeometry()
->>> bg.integer_validator("my_var", 0)
+>>> bg.integer_validator("age", 0)
 Traceback (most recent call last):
 ...
-ValueError: my_var must be greater than 0
+ValueError: age must be greater than 0
 
-# Test integer_validator with boolean
+# Test integer_validator with boolean True
 >>> bg = BaseGeometry()
 >>> bg.integer_validator("flag", True)
 Traceback (most recent call last):
 ...
 TypeError: flag must be an integer
 
+# Test integer_validator with boolean False
+>>> bg = BaseGeometry()
 >>> bg.integer_validator("flag", False)
 Traceback (most recent call last):
 ...
@@ -55,49 +66,49 @@ TypeError: flag must be an integer
 
 # Test integer_validator with None
 >>> bg = BaseGeometry()
->>> bg.integer_validator("name", None)
+>>> bg.integer_validator("age", None)
 Traceback (most recent call last):
 ...
-TypeError: name must be an integer
+TypeError: age must be an integer
 
 # Test integer_validator with list
 >>> bg = BaseGeometry()
->>> bg.integer_validator("name", [1, 2, 3])
+>>> bg.integer_validator("age", [1, 2, 3])
 Traceback (most recent call last):
 ...
-TypeError: name must be an integer
+TypeError: age must be an integer
 
 # Test integer_validator with tuple
 >>> bg = BaseGeometry()
->>> bg.integer_validator("name", (1, 2))
+>>> bg.integer_validator("age", (1, 2))
 Traceback (most recent call last):
 ...
-TypeError: name must be an integer
+TypeError: age must be an integer
 
 # Test integer_validator with dict
 >>> bg = BaseGeometry()
->>> bg.integer_validator("name", {"key": "value"})
+>>> bg.integer_validator("age", {1: 2})
 Traceback (most recent call last):
 ...
-TypeError: name must be an integer
+TypeError: age must be an integer
 
 # Test integer_validator with set
 >>> bg = BaseGeometry()
->>> bg.integer_validator("name", {1, 2, 3})
+>>> bg.integer_validator("age", {1, 2, 3})
 Traceback (most recent call last):
 ...
-TypeError: name must be an integer
+TypeError: age must be an integer
 
 # Test integer_validator with no arguments
 >>> bg = BaseGeometry()
 >>> bg.integer_validator()
 Traceback (most recent call last):
 ...
-TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
-# Test integer_validator with one argument
+# Test integer_validator with one argument only
 >>> bg = BaseGeometry()
->>> bg.integer_validator("name")
+>>> bg.integer_validator("age")
 Traceback (most recent call last):
 ...
-TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+TypeError: integer_validator() missing 1 required positional argument: 'value'
