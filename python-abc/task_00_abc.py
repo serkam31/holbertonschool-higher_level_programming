@@ -7,7 +7,9 @@ class Animal(ABC):
     """Abstract base class for animals."""
     @abstractmethod
     def sound(self):
-        """Method to be implemented by subclasses to return the sound of the animal."""
+        """Method to be implemented by subclasses
+           to return the sound of the animal.
+        """
         pass
 
 
