@@ -29,12 +29,15 @@ def fetch_and_save_posts():
     # If the request was successful, structure data and write to CSV
     if response.status_code == 200:
         posts = response.json()
-
         # Keep only id, title, and body for each post
-        filtered_posts = [
-            {"id": post["id"], "title": post["title"], "body": post["body"]}
-            for post in posts
-        ]
+        filtered_posts = []
+        for post in posts:
+            nouveau_post = {
+                "id": post["id"],
+                "title": post["title"],
+                "body": post["body"]
+            }
+            filtered_posts.append(nouveau_post)
 
         # Write to CSV file
         with open("posts.csv", "w", newline="") as csvfile:
