@@ -1,0 +1,2 @@
+-- Write a SQL query to list all the cities in the database hbtn_0d_usa. The states table contains the state name and id, and the cities table contains the city name, id, and state_id (which is a foreign key referencing the states table). The results should be sorted by cities.name in ascending order.
+SELECT cities.id, cities.name, states.name FROM states JOIN cities ON cities.state_id = states.id ORDER BY cities.id ASC;
