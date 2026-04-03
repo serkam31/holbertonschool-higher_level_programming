@@ -250,4 +250,5 @@ False
 True
 ```
 
-That is the kind of lesson this project delivers: Python’s object model is not just theory, it explains the output of real code. Once you understand identity, type, mutability, and argument passing, a lot of Python behavior becomes much easier to predict.
+That is the kind of lesson this project delivers: Python’s object model is not just theory, it explains the output of real code. Once you understand identity, type, mutability,
+and argument passing, a lot of Python behavior becomes much easier to predict.
